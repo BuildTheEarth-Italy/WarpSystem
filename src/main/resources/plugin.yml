@@ -1,0 +1,4 @@
+name: WarpSystem
+version: '0.1-Alpha'
+main: org.bteitaly.warpSystem.WarpSystem
+api-version: '1.21'
