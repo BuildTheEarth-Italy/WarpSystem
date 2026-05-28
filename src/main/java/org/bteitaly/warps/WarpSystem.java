@@ -3,6 +3,8 @@ package org.bteitaly.warps;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import org.bteitaly.warps.commands.AdminCommand;
+import org.bteitaly.warps.commands.VisitCommand;
 import org.bteitaly.warps.util.LangUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -27,6 +29,11 @@ public final class WarpSystem extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
+
+        getCommand("visit").setExecutor(new VisitCommand());
+        getCommand("visit").setTabCompleter(new VisitCommand()); // Probably not the best idea
+        getCommand("warpadm").setExecutor(new AdminCommand());
+
     }
 
     @Override

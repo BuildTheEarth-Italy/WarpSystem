@@ -2,3 +2,12 @@ name: WarpSystem
 version: '0.1-Alpha'
 main: org.bteitaly.warps.WarpSystem
 api-version: '1.21'
+
+commands:
+  visit:
+    description: A command to visit BTE Hiberito
+    usage: /visit <location>
+
+  warpadm:
+    description: Admin command for Warp System
+    usage: /warpadm location set <name>
