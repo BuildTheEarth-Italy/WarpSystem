@@ -1,0 +1,7 @@
+#-----------------------------------------------------
+# Util
+#-----------------------------------------------------
+util:
+  no-permission: "You do not have the required permission to use this command"
+
+config-version: 1.0

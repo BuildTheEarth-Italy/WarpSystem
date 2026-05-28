@@ -1,0 +1,7 @@
+#-----------------------------------------------------
+# Util
+#-----------------------------------------------------
+util:
+  no-permission: "Non hai il permesso per usare questo comando"
+
+config-version: 1.0
