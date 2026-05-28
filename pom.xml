@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.bteitaly</groupId>
-    <artifactId>WarpSystem</artifactId>
+    <artifactId>Warps</artifactId>
     <version>0.1-Alpha</version>
     <packaging>jar</packaging>
 
@@ -55,6 +55,11 @@
             <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
+        <!-- Alps Repo -->
+        <repository>
+            <id>alpsbte-repo</id>
+            <url>https://mvn.alps-bte.com/repository/alps-bte/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -62,6 +67,19 @@
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.21.11-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- LangLibs -->
+        <dependency>
+            <groupId>li.cinnazeyy</groupId>
+            <artifactId>LangLibs-API</artifactId>
+            <version>1.5.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
