@@ -1,10 +1,14 @@
 package org.bteitaly.warps;
 
+import com.alpsbte.alpslib.io.config.ConfigNotImplementedException;
+import com.alpsbte.alpslib.io.database.DatabaseConfigPaths;
+import com.alpsbte.alpslib.io.database.DatabaseConnection;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bteitaly.warps.commands.AdminCommand;
 import org.bteitaly.warps.commands.VisitCommand;
+import org.bteitaly.warps.util.ConfigUtil;
 import org.bteitaly.warps.util.LangUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -19,6 +23,18 @@ public final class WarpSystem extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+
+        // Load Config
+        try {
+            ConfigUtil.init();
+        } catch (ConfigNotImplementedException e) {
+            Bukkit.getLogger().log(Level.SEVERE,e.getMessage(),e);
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        // Open Database connection
+        DatabaseConnection.initializeDatabase(DatabaseConfigPaths.getConfig(ConfigUtil.getConfigInstance().configs[0]), true);
 
         // Load language files
         try {
@@ -36,8 +52,9 @@ public final class WarpSystem extends JavaPlugin {
 
     }
 
+
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        DatabaseConnection.shutdown();
     }
 }
