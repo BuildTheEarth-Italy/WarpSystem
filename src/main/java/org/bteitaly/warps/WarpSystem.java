@@ -22,7 +22,7 @@ public final class WarpSystem extends JavaPlugin {
 
         // Load language files
         try {
-            LangUtil.init();
+            //  LangUtil.init();
             Bukkit.getConsoleSender().sendMessage(Component.text("Successfully loaded language files.", NamedTextColor.GREEN));
         } catch(Exception ex) {
             Bukkit.getLogger().log(Level.SEVERE,ex.getMessage(),ex);
@@ -40,4 +40,5 @@ public final class WarpSystem extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
+
 }
