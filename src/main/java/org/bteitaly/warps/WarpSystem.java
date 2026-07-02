@@ -25,16 +25,16 @@ public final class WarpSystem extends JavaPlugin {
         plugin = this;
 
         // Load Config
-        try {
-            ConfigUtil.init();
-        } catch (ConfigNotImplementedException e) {
-            Bukkit.getLogger().log(Level.SEVERE,e.getMessage(),e);
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
+//        try {
+//           // ConfigUtil.init();
+//        } catch (ConfigNotImplementedException e) {
+//            Bukkit.getLogger().log(Level.SEVERE,e.getMessage(),e);
+//            getServer().getPluginManager().disablePlugin(this);
+//            return;
+//        }
 
         // Open Database connection
-        DatabaseConnection.initializeDatabase(DatabaseConfigPaths.getConfig(ConfigUtil.getConfigInstance().configs[0]), true);
+        // DatabaseConnection.initializeDatabase(DatabaseConfigPaths.getConfig(ConfigUtil.getConfigInstance().configs[0]), true);
 
         // Load language files
         try {
